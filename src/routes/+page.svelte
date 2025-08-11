@@ -1112,7 +1112,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 							width="100%" 
 							height="100%" 
 							style="border:0;" 
-							allowfullscreen="" 
+							allowfullscreen 
 							loading="lazy" 
 							referrerpolicy="no-referrer-when-downgrade"
 							title="Horizon GB of Divertoll Tilottama Location">

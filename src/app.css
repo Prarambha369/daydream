@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
 @import '@fontsource/atkinson-hyperlegible';
 @import '@fontsource/jersey-15';
 
@@ -19,7 +18,7 @@
   font-style: italic;
 }
 
-@theme {
+:root {
   --font-sans: 'Atkinson Hyperlegible', ui-sans-serif, sans-serif;
   --font-serif: 'Daydream New', ui-serif, serif;
   --font-pixel: 'Jersey 15', monospace;
@@ -81,7 +80,11 @@
 
 /* for the guide */
 .notebook {
-  @apply bg-white bg-clip-padding p-8 mt-8;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 2rem;
+  margin-top: 2rem;
   border-top: 64px solid transparent;
   border-image: url('/guide/notebook-border.png') 72 round;
 }
