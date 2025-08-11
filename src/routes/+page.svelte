@@ -61,6 +61,11 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 	];
 
 	
+	import { onMount } from "svelte";
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	import Ticker from "$lib/components/Ticker.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 	import ParticipantSignUp from "$lib/components/ParticipantSignUp.svelte";
 	import { page } from '$app/stores';
 	
@@ -81,7 +86,8 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 	Gamejam
 	Butwal Hacks
 	HackClub Butwal
-  Gaze Hacks`.split("\n")
+  Gaze Hacks
+  ICT Club of New Horizon G.B.S`.split("\n")
 
 	function createSmoothPath(points: Array<{ x: number; y: number }>) {
 		if (points.length < 2) return "";
@@ -826,7 +832,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			<h4
 				class="text-2xl opacity-90 mt-2 font-serif bg-gradient-to-b from-[#487DAB] to-[#3F709A] bg-clip-text text-transparent max-sm:text-xl"
 			>
-				Organized by Butwal Hacks & Gaze Hacks
+				Organized by Butwal Hacks
 			</h4>
 		</div>
 		
