@@ -1,16 +1,5 @@
-import Airtable from 'airtable';
+
 import { json } from '@sveltejs/kit';
-import { AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_EMAILS_TABLE } from '$env/static/private';
-
-if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
-	console.warn('Airtable environment variables not configured, email saving will be skipped');
-}
-
-const base = AIRTABLE_API_KEY && AIRTABLE_BASE_ID 
-	? new Airtable({
-		apiKey: AIRTABLE_API_KEY
-	}).base(AIRTABLE_BASE_ID)
-	: null;
 
 export async function POST({ request, getClientAddress }) {
 	try {
@@ -27,23 +16,9 @@ export async function POST({ request, getClientAddress }) {
 		
 		// get IP address
 		const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || getClientAddress();
-		
-		if (base) {
-			await base(AIRTABLE_EMAILS_TABLE || 'email_addresses').create([
-				{
-					fields: {
-						email,
-						ip,
-					}
-				}
-			]);
-		}
-		
+		// No-op: Email saving disabled
 		return new Response(null, { status: 200 });
-		
 	} catch (error) {
-		console.error('Error saving email to Airtable:', error);
-		
 		return new Response(null, { status: 418 });
 	}
 }
