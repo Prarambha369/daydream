@@ -1020,23 +1020,23 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 
 {#if sponsorsEnabled}
 <!-- Second Billboard Section -->
-<div class="w-full bg-[#FCEFC5] pb-16 pt-6 px-8 flex justify-center">
+<!-- <div class="w-full bg-[#FCEFC5] pb-16 pt-6 px-8 flex justify-center">
 	<div class="relative max-w-4xl w-full">
-		<!-- Billboard Container -->
+		
 		<div class="relative bg-[#f0f9ff] border-[10px] border-b-[16px] border-[#888896] rounded-lg rounded-b-xl mx-auto z-40">
-			<!-- Header Section -->
+			
 			<div class="w-full bg-[url('/billboard-bg-texture.png')] bg-contain bg-repeat py-6 relative" style="border-bottom: 8px solid #B4B4C5;">
 				<h2 class="text-4xl font-serif text-[#F0F0FF] text-center">
 					Sponsors
 				</h2>
-				<!-- Brush texture overlay for header -->
+				
 				<div class="absolute top-0 left-0 w-full h-full bg-[url('brushstroking.png')] bg-size-[100vw_100vh] bg-repeat mix-blend-overlay opacity-60 pointer-events-none"></div>
 			</div>
-			<!-- Main Content Area -->
+			
 			<div class="relative bg-gradient-to-b from-[#CCF4FD] to-[#AECDF6] px-8 pt-8 pb-16">
-				<!-- Brush texture overlay for content -->
+			
 				<div class="absolute top-0 left-0 w-full h-full bg-[url('brushstroking.png')] bg-size-[100vw_100vh] bg-repeat mix-blend-overlay opacity-60 pointer-events-none"></div>
-				<!-- Sponsors Tiers -->
+				
 				<div class="relative z-10 min-h-40 space-y-12">
 					{#each sponsorTiers as tier}
 						<div>
@@ -1057,12 +1057,10 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 					{/if}
 				</div>
 			</div>
-			<!-- Billboard Bars (bottom) -->
 			<div 
 				class="absolute bottom-0 -left-[5px] w-[calc(100%+10px)] h-6 bg-[url('/billboard-bars.png')] bg-repeat-x bg-contain bg-center pointer-events-none z-10 border-[#9898a7] border-x-[6px]"
 			></div>
 		</div>
-		<!-- Connecting Pillars to First Billboard -->
 		<div 
 			class="absolute top-0 left-[15%] w-[10vw] max-w-12 h-32 bg-[url('/billboard-pillar.png')] bg-repeat-y pointer-events-none bg-contain -translate-y-32"
 			style="box-shadow: inset 0 8px 12px -6px rgba(0, 0, 0, 0.1);"
@@ -1071,7 +1069,6 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			class="absolute top-0 right-[15%] w-[10vw] max-w-12 h-32 bg-[url('/billboard-pillar.png')] bg-repeat-y pointer-events-none bg-contain -translate-y-32"
 			style="box-shadow: inset 0 8px 12px -6px rgba(0, 0, 0, 0.1);"
 		></div>
-		<!-- Billboard Pillars (extending down from bottom) -->
 		<div 
 			class="absolute bottom-0 left-[15%] w-[10vw] max-w-12 h-24 bg-[url('/billboard-pillar.png')] bg-repeat-y pointer-events-none bg-contain translate-y-24"
 			style="box-shadow: inset 0 8px 12px -6px rgba(0, 0, 0, 0.1);"
@@ -1085,7 +1082,8 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			<div class="absolute bottom-0 left-0 w-full h-auto bg-[url('/clouds-loop.png')] bg-no-repeat bg-contain bg-bottom pointer-events-none aspect-[2/1]"></div>
 		</div>
 	</div>
-</div>
+</div> -->
+
 {/if}
 
 <!-- Venue Section -->
@@ -1444,6 +1442,40 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 
 	<div class="absolute top-0 left-0 w-full h-full bg-[url('brushstroking.png')] bg-size-[100vw_100vh] bg-repeat mix-blend-overlay opacity-60 pointer-events-none"></div>
 </div>
+
+<!-- Code of Conduct Section -->
+<section class="relative py-20 bg-gradient-to-b from-[#87CEEB] to-[#98D8E8] overflow-hidden">
+	<!-- Background clouds -->
+	<div class="absolute inset-0 bg-[url('clouds-loop.png')] bg-repeat opacity-30 animate-pulse"></div>
+	
+	<div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+		<div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border-2 border-white/50 transform hover:scale-105 transition-transform duration-300">
+			<h2 class="text-4xl font-serif font-bold text-gray-800 mb-6 max-md:text-3xl">
+				Code of Conduct
+			</h2>
+			<p class="text-lg text-gray-700 mb-8 leading-relaxed max-md:text-base">
+				We want Daydream to be a safe, fun, and welcoming space for all participants. 
+				All attendees are expected to follow our code of conduct to ensure everyone can focus on building amazing games together.
+			</p>
+			<a 
+				href="https://hackclub.com/conduct/" 
+				target="_blank" 
+				rel="noopener noreferrer"
+				class="inline-block bg-gradient-to-r from-[#FF6B6B] to-[#FFE66D] text-gray-800 font-bold text-xl px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300 border-2 border-white/50 hover:border-white/80"
+			>
+				Read Our Code of Conduct →
+			</a>
+			<p class="text-sm text-gray-600 mt-4">
+				Questions? Reach out to us at <a href="mailto:daydream@butwalhacks.com" class="text-blue-600 hover:underline">daydream@butwalhacks.com</a>
+			</p>
+		</div>
+	</div>
+	
+	<!-- Decorative elements -->
+	<div class="absolute top-10 left-10 w-16 h-16 bg-white/20 rounded-full animate-bounce"></div>
+	<div class="absolute bottom-10 right-10 w-12 h-12 bg-white/30 rounded-full animate-bounce" style="animation-delay: 0.5s;"></div>
+	<div class="absolute top-1/2 left-20 w-8 h-8 bg-white/25 rounded-full animate-pulse"></div>
+</section>
 
 <Footer />
 
