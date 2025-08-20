@@ -86,8 +86,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 	Gamejam
 	Butwal Hacks
 	HackClub Butwal
-  Gaze Hacks
-  ICT Club of New Horizon G.B.S`.split("\n")
+  Gaze Hacks`.split("\n")
 
 	function createSmoothPath(points: Array<{ x: number; y: number }>) {
 		if (points.length < 2) return "";
@@ -935,7 +934,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 
 				<p class="mb-2">With love & high fives,</p>
 
-				<p class="italic text-2xl opacity-85">Prarambha & Rabin from Butwal!</p>
+				<p class="italic text-2xl opacity-85">Butwal Hacks</p>
 			</div>
 		</div>
 	</div>
@@ -1100,24 +1099,24 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 				<div class="absolute top-0 left-0 w-full h-full bg-[url('brushstroking.png')] bg-size-[100vw_100vh] bg-repeat mix-blend-overlay opacity-60 pointer-events-none"></div>
 				<div class="relative z-10 min-h-40 flex flex-col items-center justify-center">
 					<img src="/map-flag.png" alt="Venue Map" class="w-32 h-32 object-contain mb-4" />
-					<h3 class="text-2xl font-bold text-center mb-2 text-[#335969]">Horizon GB of Divertoll Tilottama</h3>
-					<p class="text-lg text-[#335969] text-center mb-4">Tilottama, Nepal</p>
+					<h3 class="text-2xl font-bold text-center mb-2 text-[#335969]"> </h3> <!-- Venue Name -->
+					<p class="text-lg text-[#335969] text-center mb-4"></p>
 					
 					<!-- Embedded Map -->
 					<div class="w-full max-w-2xl h-64 mb-4 rounded-lg overflow-hidden border-2 border-[#335969]/20">
 						<iframe 
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14128.274!2d83.469536!3d27.648685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996864a8a8a8a8a%3A0x8b3f3f3f3f3f3f3f!2zSG9yaXpvbiBHQiBvZiBEaXZlcnRvbGwgVGlsb3R0YW1h!5e0!3m2!1sen!2snp!4v1733529000000!5m2!1sen!2snp"
+
 							width="100%" 
 							height="100%" 
 							style="border:0;" 
 							allowfullscreen 
 							loading="lazy" 
 							referrerpolicy="no-referrer-when-downgrade"
-							title="Horizon GB of Divertoll Tilottama Location">
+							title="">
 						</iframe>
 					</div>
 					
-					<a href="https://www.google.com/maps?ll=27.648685,83.469536&z=10&t=m&hl=en-US&gl=US&mapclient=embed&cid=10033274374314726711" target="_blank" class="underline text-blue-700 hover:text-blue-900">View on Google Maps</a>
+					<!-- <a href="https://www.google.com/maps?ll=27.648685,83.469536&z=10&t=m&hl=en-US&gl=US&mapclient=embed&cid=10033274374314726711" target="_blank" class="underline text-blue-700 hover:text-blue-900">View on Google Maps</a> -->
 				</div>
 			</div>
 			<div class="absolute bottom-0 -left-[5px] w-[calc(100%+10px)] h-6 bg-[url('/billboard-bars.png')] bg-repeat-x bg-contain bg-center pointer-events-none z-10 border-[#9898a7] border-x-[6px]"></div>
