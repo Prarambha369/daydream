@@ -124,4 +124,24 @@ RenRan
 
 ## Extra: Tips & Advice
 
-Make the highest tier more than half of your budget. **The lowest tier should also be a significant contribution.** For example: if your budget is $8k, make $5k your highest tier and $1.5k your lowest tier. 
+Make the highest tier more than half of your budget. **The lowest tier should also be a significant contribution.** For example: if your budget is $8k, make $5k your highest tier and $1.5k your lowest tier.
+
+## Sponsor credit: Jukebox Print
+
+Jukebox Print is committing $500 in credits per qualifying HCB organization. The credit is valid site wide, and you can place multiple orders using the same coupon code until it runs out.
+
+To have your participation validated you must include a link on your event page, recap, or website that points to:
+
+https://www.jukeboxprint.com/custom-stickers
+
+Important: for SEO validation the anchor text must be exactly "custom stickers" and that must be the only text linking to Jukebox's page. Do NOT hyperlink other words or the logo.
+
+You can use this ready-to-paste HTML snippet (logo image is optional and must NOT be a link):
+
+
+
+If you'd rather use plain Markdown for a recap or README, use:
+
+Thanks to Jukebox for our [custom stickers](https://www.jukeboxprint.com/custom-stickers).
+
+The link is the main way Jukebox validates participation; the better the placement, the more likely you'll be eligible for bonus credits on top of the $500.

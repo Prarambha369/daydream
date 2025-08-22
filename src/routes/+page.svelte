@@ -10,26 +10,25 @@
 	// Sponsors Configuration
 	const sponsorsEnabled = true;
 	const sponsorTiers = [
-  {
+		  {
     name: "Platinum",
-    sponsors: [
-      { image: "/example/logo1.png", name: "Sponsor 1", url: "https://example1.com" }
-    ]
+    sponsors: [ { image: "/jukeboxprint.png", name: "Jukebox", url: "https://www.jukeboxprint.com/custom-stickers" } ]
   },
-  {
-    name: "Gold",
-    sponsors: [
-      { image: "/example/logo2.png", name: "Sponsor 2", url: "https://example2.com" },
-      { image: "/example/logo3.png", name: "Sponsor 3", url: "https://example3.com" }
-    ]
-  },
-  {
-    name: "Silver",
-    sponsors: [
-      { image: "/example/logo4.png", name: "Sponsor 4", url: "https://example4.com" },
-      { image: "/example/logo5.png", name: "Sponsor 5", url: "https://example5.com" }
-    ]
-  }
+//   {
+//     name: "Gold",
+//     sponsors: [
+//       { image: "/example/logo2.png", name: "Sponsor 2", url: "" },
+//       { image: "/example/logo3.png", name: "Sponsor 3", url: "https://example3.com" }
+//     ]
+//   },
+// {
+// 	name: "Silver",
+// 	sponsors: [
+// 		// { image: "", name: "Sponsor 4", url: "https://example4.com" },
+// 		// { image: "/example/logo5.png", name: "Sponsor 5", url: "https://example5.com" },
+// 		{ image: "/jukeboxprint.png", name: "Jukebox", url: "https://www.jukeboxprint.com/custom-stickers" }
+// 	]
+// }
 ];
 const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 
@@ -818,8 +817,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			</a>
 		</div>
 		<div class="relative inline-block px-4">
-			<h3
-				class="text-3xl italic font-serif bg-gradient-to-b from-[#487DAB] to-[#3F709A] bg-clip-text text-transparent w-max max-sm:text-2xl mx-auto"
+			<h3 class="text-3xl italic font-serif bg-gradient-to-b from-[#487DAB] to-[#3F709A] bg-clip-text text-transparent w-max max-sm:text-2xl mx-auto"
 			>
 				Game jam for high schoolers
 			</h3>
@@ -1019,7 +1017,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 
 {#if sponsorsEnabled}
 <!-- Second Billboard Section -->
-<!-- <div class="w-full bg-[#FCEFC5] pb-16 pt-6 px-8 flex justify-center">
+<div class="w-full bg-[#FCEFC5] pb-16 pt-6 px-8 flex justify-center">
 	<div class="relative max-w-4xl w-full">
 		
 		<div class="relative bg-[#f0f9ff] border-[10px] border-b-[16px] border-[#888896] rounded-lg rounded-b-xl mx-auto z-40">
@@ -1081,7 +1079,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			<div class="absolute bottom-0 left-0 w-full h-auto bg-[url('/clouds-loop.png')] bg-no-repeat bg-contain bg-bottom pointer-events-none aspect-[2/1]"></div>
 		</div>
 	</div>
-</div> -->
+</div> 
 
 {/if}
 
@@ -1098,14 +1096,15 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			<div class="relative bg-gradient-to-b from-[#CCF4FD] to-[#AECDF6] px-8 pt-8 pb-16">
 				<div class="absolute top-0 left-0 w-full h-full bg-[url('brushstroking.png')] bg-size-[100vw_100vh] bg-repeat mix-blend-overlay opacity-60 pointer-events-none"></div>
 				<div class="relative z-10 min-h-40 flex flex-col items-center justify-center">
-					<img src="/map-flag.png" alt="Venue Map" class="w-32 h-32 object-contain mb-4" />
-					<h3 class="text-2xl font-bold text-center mb-2 text-[#335969]"> </h3> <!-- Venue Name -->
+					<img src="/map-flag.png" alt="Venue Map" class="w-20 h-20 object-contain mb-4" />
+					<h3 class="text-2xl font-bold text-center mb-2 text-[#335969]">Synth Bit Group Pvt Ltd</h3> 
+					<p class="text-lg text-[#335969] text-center mb-4">Butwal, Nepal</p>
 					<p class="text-lg text-[#335969] text-center mb-4"></p>
 					
 					<!-- Embedded Map -->
 					<div class="w-full max-w-2xl h-64 mb-4 rounded-lg overflow-hidden border-2 border-[#335969]/20">
 						<iframe 
-
+							src = "https://www.google.com/maps/place/Synth+Bit+Group+Pvt+Ltd/@27.699684,83.4623251,1044m/data=!3m2!1e3!4b1!4m6!3m5!1s0x39968700617e1c89:0x6b734339d6ce40b6!8m2!3d27.699684!4d83.4649!16s%2Fg%2F11y402x2js?entry=tts&g_ep=EgoyMDI1MDgxOS4wIPu8ASoASAFQAw%3D%3D&skid=aeb14951-b594-4d25-9cea-61f81fe36166"
 							width="100%" 
 							height="100%" 
 							style="border:0;" 
@@ -1115,8 +1114,8 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 							title="">
 						</iframe>
 					</div>
-					
-					<!-- <a href="https://www.google.com/maps?ll=27.648685,83.469536&z=10&t=m&hl=en-US&gl=US&mapclient=embed&cid=10033274374314726711" target="_blank" class="underline text-blue-700 hover:text-blue-900">View on Google Maps</a> -->
+
+					<a href="https://www.google.com/maps/place/Synth+Bit+Group+Pvt+Ltd/@27.699684,83.4623251,1044m/data=!3m2!1e3!4b1!4m6!3m5!1s0x39968700617e1c89:0x6b734339d6ce40b6!8m2!3d27.699684!4d83.4649!16s%2Fg%2F11y402x2js?entry=tts&g_ep=EgoyMDI1MDgxOS4wIPu8ASoASAFQAw%3D%3D&skid=aeb14951-b594-4d25-9cea-61f81fe36166" target="_blank" class="underline text-blue-700 hover:text-blue-900">View on Google Maps</a>
 				</div>
 			</div>
 			<div class="absolute bottom-0 -left-[5px] w-[calc(100%+10px)] h-6 bg-[url('/billboard-bars.png')] bg-repeat-x bg-contain bg-center pointer-events-none z-10 border-[#9898a7] border-x-[6px]"></div>
@@ -1167,7 +1166,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			<div class="relative w-72 h-40 max-md:w-80 animate-hover ![--hover:-0.15rem] ![animation-delay:1.7s] z-20" data-point="1">
 				<img src="paper1.png" alt="" class="w-full h-full object-contain">
 				<div class="absolute inset-0 justify-center text-center p-6 text-xl font-serif max-md:text-lg text-[#8B4513] inline-block content-center">
-					<span class="font-sans text-[#E472AB] font-bold text-[1.3rem] mr-1">#1:</span> <a href="https://example.com" class="underline">Sign up</a> for Daydream {eventName}
+					<span class="font-sans text-[#E472AB] font-bold text-[1.3rem] mr-1">#1:</span> <a href="https://forms.hackclub.com/daydream-sign-up" class="underline">Sign up</a> for Daydream {eventName}
 				</div>
 			</div>
 		</div>
