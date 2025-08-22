@@ -1104,7 +1104,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 					<!-- Embedded Map -->
 					<div class="w-full max-w-2xl h-64 mb-4 rounded-lg overflow-hidden border-2 border-[#335969]/20">
 						<iframe 
-							src = "https://www.google.com/maps/place/Synth+Bit+Group+Pvt+Ltd/@27.699684,83.4623251,1044m/data=!3m2!1e3!4b1!4m6!3m5!1s0x39968700617e1c89:0x6b734339d6ce40b6!8m2!3d27.699684!4d83.4649!16s%2Fg%2F11y402x2js?entry=tts&g_ep=EgoyMDI1MDgxOS4wIPu8ASoASAFQAw%3D%3D&skid=aeb14951-b594-4d25-9cea-61f81fe36166"
+							src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4544.5040341230115!2d83.4649!3d27.699683999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39968700617e1c89%3A0x6b734339d6ce40b6!2sSynth%20Bit%20Group%20Pvt%20Ltd!5e1!3m2!1sen!2snp!4v1755841201372!5m2!1sen!2snp"
 							width="100%" 
 							height="100%" 
 							style="border:0;" 
