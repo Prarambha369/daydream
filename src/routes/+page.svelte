@@ -9,28 +9,20 @@
 	
 	// Sponsors Configuration
 	const sponsorsEnabled = true;
-	const sponsorTiers = [
-		  {
-    name: "Platinum",
-    sponsors: [ { image: "/jukeboxprint.png", name: "Jukebox", url: "https://www.jukeboxprint.com/custom-stickers" } ]
-  },
-//   {
-//     name: "Gold",
-//     sponsors: [
-//       { image: "/example/logo2.png", name: "Sponsor 2", url: "" },
-//       { image: "/example/logo3.png", name: "Sponsor 3", url: "https://example3.com" }
-//     ]
-//   },
-// {
-// 	name: "Silver",
-// 	sponsors: [
-// 		// { image: "", name: "Sponsor 4", url: "https://example4.com" },
-// 		// { image: "/example/logo5.png", name: "Sponsor 5", url: "https://example5.com" },
-// 		{ image: "/jukeboxprint.png", name: "Jukebox", url: "https://www.jukeboxprint.com/custom-stickers" }
-// 	]
-// }
-];
-const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
+
+	type Sponsor = {
+		name: string;
+		image: string;
+		url: string;
+	};
+
+	type SponsorTier = {
+		name: string;
+		sponsors: Sponsor[];
+	};
+
+		let sponsorTiers: SponsorTier[] = [];
+		const sponsors = [];
 
 	// Schedule Configuration - You don't need to use this exact schedule, this is just an example!
 	const scheduleData: { title: string; items: { event: string; time: string; }[] }[] = [
@@ -497,118 +489,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			}
 		};
 
-		// Create animation timeline
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: container,
-				start: "top 100%",
-				end: "bottom 100%",
-				scrub: 1.5,
-				// markers: true,
-			}
-		});
-
-		// Animate the progress value
-		tl.to(planeProgress, {
-			value: 1,
-			duration: 1,
-			ease: "none",
-			onUpdate: updatePlanePosition
-		});
-
-		return tl;
-	}
-
-	function createParticle () {
-		if (!particleContainer || !isTabVisible) return;
-		
-		// Find visible buttons - both stickers and main site buttons
-		const stickerButtons = document.querySelectorAll('a[href="https://forms.hackclub.com/daydream-stickers"]');
-		const mainSiteButtons = document.querySelectorAll('a[href="https://daydream.butwalhacks.com"]');
-
-		const allButtons = [...stickerButtons, ...mainSiteButtons];
-		const visibleButtons = [];
-
-		for (const btn of allButtons) {
-			const styles = window.getComputedStyle(btn);
-			if (styles.display !== 'none') {
-				visibleButtons.push(btn);
-			}
-		}
-		
-		if (visibleButtons.length === 0) return;
-
-		// Create particles from each visible button (instead of randomly choosing one)
-		visibleButtons.forEach(button => {
-			const buttonRect = button.getBoundingClientRect();
-			const containerRect = particleContainer.getBoundingClientRect();
-
-			// Spawn particles with 16px inset from edges (about half border radius)
-			const edgeInset = 16;
-			const spawnWidth = buttonRect.width - (edgeInset * 2);
-			const spawnOffset = edgeInset;
-
-			const particle = {
-				id: particleIdCounter++,
-				x: buttonRect.left - containerRect.left + spawnOffset + Math.random() * spawnWidth,
-				y: buttonRect.top + buttonRect.height / 2 - containerRect.top,
-				opacity: 1,
-				rotation: Math.random() * 360,
-				velocityY: (0.5 + Math.random() * 0.3) * particleSpeedScale,
-				velocityX: 0,
-				scale: 0.7 + Math.random() * 0.5
-			};
-
-			particles = [...particles, particle];
-		});
-	}
-
-	function updateParticles() {
-		if (!isTabVisible) return;
-		
-		particles = particles.map(particle => ({
-			...particle,
-			x: particle.x + particle.velocityX,
-			y: particle.y + particle.velocityY,
-			opacity: particle.opacity - 0.01,
-			rotation: particle.rotation + 2,
-			scale: particle.scale
-		})).filter(particle => particle.opacity > 0);
-	}
-
-	function animateParticles() {
-		updateParticles();
-		requestAnimationFrame(animateParticles);
-	}
-
-	function handleVisibilityChange() {
-		isTabVisible = !document.hidden;
-	}
-
-	function updatePath() {
-		const container = document.getElementById("islands-container");
-		const pathElement = document.getElementById("dotted-path");
-		
-		if (!container || !pathElement) return;
-		
-		const containerRect = container.getBoundingClientRect();
-		const points: Array<{ x: number; y: number }> = [];
-		
-		// Get points in order by data-point attribute
-		const pointIds = ["0", "0.5", "1", "2", "3", "4", "5"];
-		pointIds.forEach(id => {
-			const element = document.querySelector(`[data-point="${id}"]`);
-			if (element) {
-				const rect = element.getBoundingClientRect();
-				points.push({
-					x: rect.left + rect.width / 2 - containerRect.left,
-					y: rect.top + rect.height / 2 - containerRect.top
-				});
-			}
-		});
-		
-		const pathData = createSmoothPath(points);
-		pathElement.setAttribute("d", pathData);
+		// (Path drawing removed; previously referenced undefined variables)
 	}
 
 	onMount(() => {
@@ -677,33 +558,25 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			});
 		}
 		
-		// Initial path calculation
+		// Initialize plane animation after layout
 		setTimeout(() => {
-			updatePath();
 			setupPlaneAnimation();
 		}, 100);
 		
 		// Update on resize
 		const handleResize = () => {
-			updatePath();
 			ScrollTrigger.refresh();
 		};
 		window.addEventListener("resize", handleResize);
 		
 		// Handle tab visibility changes
-		document.addEventListener("visibilitychange", handleVisibilityChange);
+		// Removed visibilitychange handler (function not implemented)
 		
-		// Start particle animation
-		animateParticles();
-		
-		// Start particle spawning
-		const particleInterval = setInterval(createParticle, 250);
+		// (Particle system disabled - functions removed)
 		
 		// Cleanup
 		return () => {
 			window.removeEventListener("resize", handleResize);
-			document.removeEventListener("visibilitychange", handleVisibilityChange);
-			clearInterval(particleInterval);
 			ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 		};
 	});
@@ -833,7 +706,26 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 			</h4>
 		</div>
 		
-		<ParticipantSignUp />
+						<div class="flex flex-col sm:flex-row items-center justify-center gap-4 my-8">
+							<a
+								href="https://forms.hackclub.com/daydream-sign-up"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="px-10 py-4 rounded-full font-sans text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-[#F472B6] via-[#E879F9] to-[#6366F1] shadow-[0_6px_0_0_#9d3d75] hover:shadow-[0_8px_0_0_#7a2e59] active:shadow-[0_2px_0_0_#7a2e59] active:translate-y-0.5 transition-all duration-150 focus:outline-none focus:ring-4 focus:ring-pink-300/40"
+								style="background-image: linear-gradient(90deg,#F472B6,#E879F9,#6366F1);"
+							>
+								Sign Up
+							</a>
+							<a
+								href="https://butwalhacks.com" 
+								target="_blank" 
+								rel="noopener noreferrer"
+								class="px-10 py-4 rounded-full font-sans text-lg sm:text-xl font-semibold text-[#335969] bg-gradient-to-r from-[#FCEFC5] via-[#FFD6E8] to-[#CCF4FD] shadow-[0_6px_0_0_#b7b7c5] hover:shadow-[0_8px_0_0_#9d9daa] active:shadow-[0_2px_0_0_#9d9daa] active:translate-y-0.5 transition-all duration-150 focus:outline-none focus:ring-4 focus:ring-[#FFD6E8]/50"
+							>
+								More Info / Visit Site
+							</a>
+						</div>
+
 	</div>
 
 	<!-- <img src="hot-air-balloon.png" alt="" class="absolute w-1/8 right-32 bottom-40 z-20"> -->
@@ -1036,7 +928,7 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 				
 				<div class="relative z-10 min-h-40 space-y-12">
 					{#each sponsorTiers as tier}
-						<div>
+									<div>
 							<h3 class="text-2xl font-bold text-center mb-4 text-[#335969]">{tier.name} Sponsors</h3>
 							<div class="flex flex-wrap justify-center gap-8">
 								{#each tier.sponsors as sponsor}
@@ -1047,9 +939,18 @@ const sponsors = sponsorTiers.flatMap(tier => tier.sponsors);
 							</div>
 						</div>
 					{/each}
+					<!-- Sticker Partner section -->
+					<div class="flex flex-col items-center justify-center my-8">
+						<h3 class="text-2xl font-bold text-center mb-4 text-[#335969]">Sticker Partner</h3>
+						<img src="/jukeboxprint.png" alt="Jukebox Print Logo" class="w-40 mb-2" />
+						<p class="text-lg text-center max-w-xl">
+							Big shoutout to Jukebox for our <a href="https://www.jukeboxprint.com/custom-stickers" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline">custom stickers</a> at the Hackathon!
+						</p>
+					</div>
 					{#if contactLink}
 						<div class="mt-8 text-center">
 							<p class="text-lg text-[#335969]">Want to sponsor Daydream {eventName}? <a href={contactLink} class="underline hover:text-[#477783] transition-colors">Get in touch</a></p>
+							<p class="text-sm mt-4">See full sponsorship tiers: <a href="/sponsor-us" class="text-blue-700 underline hover:text-pink-600 transition-colors">/sponsor-us</a></p>
 						</div>
 					{/if}
 				</div>
