@@ -1,13 +1,13 @@
 /* Daydream Theme - Custom CSS for external websites */
-/* Import the serif font from daydream.hackclub.com */
-@import url('https://daydream.hackclub.com/fonts/serif.woff') format('woff');
-@import url('https://daydream.hackclub.com/fonts/serif-italic.woff') format('woff');
+/* Import the serif font from daydream.butwalhacks.com */
+@import url('https://daydream.butwalhacks.com/fonts/serif.woff') format('woff');
+@import url('https://daydream.butwalhacks.com/fonts/serif-italic.woff') format('woff');
 
 /* Define the Daydream fonts */
 @font-face {
   font-family: 'Daydream New';
   font-display: swap;
-  src: url('https://daydream.hackclub.com/fonts/serif.woff') format('woff');
+  src: url('https://daydream.butwalhacks.com/fonts/serif.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @font-face {
   font-family: 'Daydream New';
   font-display: swap;
-  src: url('https://daydream.hackclub.com/fonts/serif-italic.woff') format('woff');
+  src: url('https://daydream.butwalhacks.com/fonts/serif-italic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
 }
@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 #question-container {
   border-radius: 0px;
   background-color: #fffbdf;
-  background-image: url('https://daydream.hackclub.com/letter-texture.png');
+  background-image: url('https://daydream.butwalhacks.com/letter-texture.png');
   background-size: 100% auto;
   background-repeat: repeat-y;
   border: 2px solid #d3b180;
@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%);
   width: auto;
   height: 100%;
-  background-image: url('https://daydream.hackclub.com/button-clouds.svg');
+  background-image: url('https://daydream.butwalhacks.com/button-clouds.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -117,7 +117,7 @@ div:has(> div > [data-cy="select-value-container"]),
 }
 
 #scrollable-widgets-wrapper {
-  background: url('https://daydream.hackclub.com/cloudy-bg-dim.png'), linear-gradient(to bottom, #CCF4FD, #AECDF6);
+  background: url('https://daydream.butwalhacks.com/cloudy-bg-dim.png'), linear-gradient(to bottom, #CCF4FD, #AECDF6);
   background-attachment: local !important;
   background-position: center bottom;
   background-repeat: no-repeat;
