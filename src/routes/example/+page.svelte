@@ -768,17 +768,12 @@ Mumbai`.split("\n")
 	<meta property="og:url" content={currentUrl} />
 	<meta property="og:title" content={pageTitle} />
 	<meta property="og:description" content={pageDescription} />
-	<meta property="og:image" content="https://daydream.butwalhacks.com/og.png" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
 	<meta property="og:site_name" content="Daydream" />
 	
 	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content={currentUrl} />
 	<meta property="twitter:title" content={pageTitle} />
 	<meta property="twitter:description" content={pageDescription} />
-	<meta property="twitter:image" content="https://daydream.butwalhacks.com/og-image.png" />
 	<meta property="twitter:creator" content="@hackclub" />
 	<meta property="twitter:site" content="@hackclub" />
 	
